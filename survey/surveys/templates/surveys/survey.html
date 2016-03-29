@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+
+    <div class="page-header">
+        <h1>Story form</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h2>Story beginning</h2>
+                        <p class="lead">
+                            DURING THE PERIOD in which these developments were occurring,
+                            I had returned from a scientific undertaking organized to explore
+                            the Nebraska badlands in the United States.  In my capacity as
+                            Assistant Professor at the Paris Museum of Natural History, I had
+                            been attached to this expedition by the French government.
+                            After spending six months in Nebraska, I arrived in New York laden
+                            with valuable collections near the end of March.  My departure
+                            for France was set for early May.  In the meantime, then, I was busy
+                            classifying my mineralogical, botanical, and zoological treasures
+                            when that incident took place with the Scotia.
+                        </p>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+
+                <div class="panel-body">
+                    <h2>Story events</h2>
+                    <p class="lead">
+                        <em>
+                            In this section, you will create as many event as you choose in order to complete the story.
+                        </em>
+                    </p>
+                </div>
+
+                <ul class="list-group js-story-event-list">                           
+
+                </ul>
+
+                <div class="panel-body">
+                    <button class="btn btn-primary js-add-event">Add another event</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h2>Story end</h2>
+                        <p class="lead">
+                            WE COME TO the conclusion of this voyage under the seas.
+                            What happened that night, how the skiff escaped from the Maelstrom's
+                            fearsome eddies, how Ned Land, Conseil, and I got out of that whirlpool,
+                            I'm unable to say. But when I regained consciousness, I was lying
+                            in a fisherman's hut on one of the Lofoten Islands.  My two companions,
+                            safe and sound, were at my bedside clasping my hands.
+                            We embraced each other heartily.
+                        </p>
+                    </li>
+                </ul>
+
+                <div class="panel-body">
+                    <button class="btn btn-lg btn-success js-submit-story">Submit Story</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
