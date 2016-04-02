@@ -7,9 +7,14 @@ class SurveyListView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(SurveyListView, self).get_context_data(**kwargs)
-        context['surveys'] = StorySurvey.objects.all()
+        context['surveys'] = StorySurvey.public.all()
         return context
 
 
 class SurveyView(TemplateView):
     template_name = 'surveys/survey.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(SurveyView, self).get_context_data(**kwargs)
+        #context['survey'] = StorySurvey.objects.get(pk=)
+        return context

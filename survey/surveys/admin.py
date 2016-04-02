@@ -3,7 +3,7 @@ from survey.surveys.models import StorySurvey
 
 
 class StorySurveyAdmin(admin.ModelAdmin):
-    list_display = ('title', )
+    list_display = ('title', 'is_public')
     search_fields = ('title', )
 
 
