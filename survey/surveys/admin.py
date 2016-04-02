@@ -1,3 +1,10 @@
 from django.contrib import admin
+from survey.surveys.models import StorySurvey
 
-# Register your models here.
+
+class StorySurveyAdmin(admin.ModelAdmin):
+    list_display = ('title', )
+    search_fields = ('title', )
+
+
+admin.site.register(StorySurvey, StorySurveyAdmin)

@@ -1,5 +1,12 @@
-from __future__ import unicode_literals
-
 from django.db import models
 
-# Create your models here.
+
+class StorySurvey(models.Model):
+    """
+    A database model representing a survey.
+    """
+
+    title = models.CharField(
+        max_length=90,
+        help_text='The title of the survey.'
+    )

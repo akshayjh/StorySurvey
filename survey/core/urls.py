@@ -19,9 +19,14 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
+from survey.core import views
+
 urlpatterns = [
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', admin.site.urls),
+
+    # Home page for survey web application
+    url(r'^$', views.Homepage.as_view()),
 
     url(
         r'^surveys/',
