@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h2>
+            Practice Survey
+        </h2>
+    </div>
+
+    <p class="lead">
+        ... inform the user here.
+
+        <a href="{% url 'surveys:survey' pk=survey.id %}" class="btn btn-primary btn-lg">Skip practice survey</a>
+    </p>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <a href="{% url 'surveys:survey-instructions' pk=survey.id %}" class="btn btn-success btn-lg">Previous</a>
+        </div>
+        <div class="col-sm-6 text-right">
+            <a href="{% url 'surveys:survey' pk=survey.id %}" class="btn btn-primary btn-lg">Next</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

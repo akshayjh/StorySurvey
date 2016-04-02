@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h2>
+            Instructions
+        </h2>
+    </div>
+
+    <p class="lead">
+        ... inform the user here.
+    </p>
+
+    <div class="row">
+        <div class="col-sm-6">
+        </div>
+        <div class="col-sm-6 text-right">
+            <a href="{% url 'surveys:survey-practice' pk=survey.id %}" class="btn btn-primary btn-lg">Next</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

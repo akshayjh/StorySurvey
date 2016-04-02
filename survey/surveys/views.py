@@ -2,6 +2,18 @@ from django.views.generic import TemplateView
 from survey.surveys.models import StorySurvey
 
 
+class SurveyMixin(object):
+    """
+    A mixin class to include a survey in the
+    page template context based on the page url.
+    """
+
+    def get_context_data(self, **kwargs):
+        context = super(SurveyMixin, self).get_context_data(**kwargs)
+        context['survey'] = StorySurvey.public.get(pk=self.kwargs['pk'])
+        return context
+
+
 class SurveyListView(TemplateView):
     template_name = 'surveys/survey_list.html'
 
@@ -11,10 +23,13 @@ class SurveyListView(TemplateView):
         return context
 
 
-class SurveyView(TemplateView):
-    template_name = 'surveys/survey.html'
+class SurveyInstructionView(SurveyMixin, TemplateView):
+    template_name = 'surveys/survey_instructions.html'
 
-    def get_context_data(self, **kwargs):
-        context = super(SurveyView, self).get_context_data(**kwargs)
-        #context['survey'] = StorySurvey.objects.get(pk=)
-        return context
+
+class SurveyPracticeView(SurveyMixin, TemplateView):
+    template_name = 'surveys/survey_practice.html'
+
+
+class SurveyView(SurveyMixin, TemplateView):
+    template_name = 'surveys/survey.html'

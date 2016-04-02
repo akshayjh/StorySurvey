@@ -16,7 +16,7 @@
                     <li class="list-group-item">
                         <h3>
                             {{ survey.title }}
-                            <a href="{% url 'surveys:survey' pk=survey.id %}" class="btn btn-primary pull-right">Begin survey</a>
+                            <a href="{% url 'surveys:survey-instructions' pk=survey.id %}" class="btn btn-primary pull-right">Begin survey</a>
                         </h3>
                     </li>
                 {% empty %}
