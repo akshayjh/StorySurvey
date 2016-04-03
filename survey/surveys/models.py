@@ -16,4 +16,7 @@ class StorySurvey(models.Model):
         help_text='Determines if the survey is public for users to take.'
     )
 
+    start = models.TextField(blank=True)
+    end = models.TextField(blank=True)
+
     public = StorySurveyManager()
