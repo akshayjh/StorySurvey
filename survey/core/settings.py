@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'survey.core',
-    'survey.surveys'
+    'survey.surveys',
 ]
 
 MIDDLEWARE_CLASSES = [

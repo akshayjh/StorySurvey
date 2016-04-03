@@ -9,12 +9,16 @@ class SurveyMixin(object):
     """
 
     def get_context_data(self, **kwargs):
+        from django.shortcuts import get_object_or_404
+        from django.http import Http404
+
         context = super(SurveyMixin, self).get_context_data(**kwargs)
 
         survey_id = self.kwargs.get('pk', None)
+        surveys = StorySurvey.public.is_public()
 
         if survey_id:
-            context['survey'] = StorySurvey.public.get(pk=survey_id)
+            context['survey'] = get_object_or_404(surveys, pk=survey_id)
 
         return context
 
@@ -27,7 +31,7 @@ class PublicSurveyMixin(object):
 
     def get_context_data(self, **kwargs):
         context = super(PublicSurveyMixin, self).get_context_data(**kwargs)
-        context['surveys'] = StorySurvey.public.all()
+        context['surveys'] = StorySurvey.public.is_public()
         return context
 
 
