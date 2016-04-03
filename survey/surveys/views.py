@@ -10,17 +10,29 @@ class SurveyMixin(object):
 
     def get_context_data(self, **kwargs):
         context = super(SurveyMixin, self).get_context_data(**kwargs)
-        context['survey'] = StorySurvey.public.get(pk=self.kwargs['pk'])
+
+        survey_id = self.kwargs.get('pk', None)
+
+        if survey_id:
+            context['survey'] = StorySurvey.public.get(pk=survey_id)
+
         return context
 
 
-class SurveyListView(TemplateView):
-    template_name = 'surveys/survey_list.html'
+class PublicSurveyMixin(object):
+    """
+    A mixin class to include the list of public surveys
+    in the page template context.
+    """
 
     def get_context_data(self, **kwargs):
-        context = super(SurveyListView, self).get_context_data(**kwargs)
+        context = super(PublicSurveyMixin, self).get_context_data(**kwargs)
         context['surveys'] = StorySurvey.public.all()
         return context
+
+
+class SurveyDisclaimerView(SurveyMixin, TemplateView):
+    template_name = 'surveys/survey_disclaimer.html'
 
 
 class SurveyInstructionView(SurveyMixin, TemplateView):

@@ -26,7 +26,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     # Home page for survey web application
-    url(r'^$', views.Homepage.as_view()),
+    url(r'^$', views.Homepage.as_view(), name='home'),
 
     url(
         r'^surveys/',

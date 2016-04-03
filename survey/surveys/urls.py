@@ -3,9 +3,14 @@ from survey.surveys import views as survey_views
 
 urlpatterns = [
     url(
-        r'^$',
-        survey_views.SurveyListView.as_view(),
-        name='survey-list'
+        r'^(?P<pk>[0-9]+)/disclaimer',
+        survey_views.SurveyDisclaimerView.as_view(),
+        name='survey-disclaimer'
+    ),
+    url(
+        r'^(?P<pk>[0-9]+)/instructions',
+        survey_views.SurveyInstructionView.as_view(),
+        name='survey-instructions'
     ),
     url(
         r'^(?P<pk>[0-9]+)/instructions',
