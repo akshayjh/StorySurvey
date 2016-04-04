@@ -33,6 +33,7 @@ class StoryEvent(models.Model):
     """
     A database model that represents a single event in a story.
     """
+    order = models.PositiveSmallIntegerField()
 
     survey = models.ForeignKey(
         'surveys.Story',
@@ -42,5 +43,3 @@ class StoryEvent(models.Model):
     text = models.TextField(
         help_text='The text of one event in the story.'
     )
-
-    #order
