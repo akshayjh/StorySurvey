@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-from survey.surveys.models import StorySurvey
+from survey_app.surveys.models import StorySurvey
 
 
 class SurveyMixin(object):

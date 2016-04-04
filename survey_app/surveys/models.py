@@ -1,5 +1,5 @@
 from django.db import models
-from survey.surveys.querysets import PublicStorySurveyQuerySet
+from survey_app.surveys.querysets import PublicStorySurveyQuerySet
 
 
 class StorySurvey(models.Model):

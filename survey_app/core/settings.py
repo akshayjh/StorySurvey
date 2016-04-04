@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'survey.core',
-    'survey.surveys',
+    'survey_app.core',
+    'survey_app.surveys',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -54,7 +54,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'survey.core.urls'
+ROOT_URLCONF = 'survey_app.core.urls'
 
 TEMPLATES = [
     {
@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'survey.core.wsgi.application'
+WSGI_APPLICATION = 'survey_app.core.wsgi.application'
 
 
 # Database

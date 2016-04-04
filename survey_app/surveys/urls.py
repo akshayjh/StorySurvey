@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from survey.surveys import views as survey_views
+from survey_app.surveys import views as survey_views
 
 urlpatterns = [
     url(

@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-from survey.core import views
+from survey_app.core import views
 
 urlpatterns = [
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
@@ -31,7 +31,7 @@ urlpatterns = [
     url(
         r'^surveys/',
         include(
-            'survey.surveys.urls',
+            'survey_app.surveys.urls',
             namespace='surveys'
         ),
         name='surveys',

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from survey.surveys.models import StorySurvey
+from survey_app.surveys.models import StorySurvey
 
 
 class StorySurveyAdmin(admin.ModelAdmin):
