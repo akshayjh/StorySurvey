@@ -1,11 +1,11 @@
 import factory
 import faker
-from survey_app.surveys.models import StorySurvey
+from survey_app.surveys.models import Story
 
 fake = faker.Faker()
 
 
-class StorySurveyFactory(factory.DjangoModelFactory):
+class StoryFactory(factory.DjangoModelFactory):
     title = factory.LazyAttribute(lambda n: fake.sentence(
         nb_words=6,
         variable_nb_words=True
@@ -15,4 +15,4 @@ class StorySurveyFactory(factory.DjangoModelFactory):
     end = factory.LazyAttribute(lambda n: fake.paragraph())
 
     class Meta:
-        model = StorySurvey
+        model = Story

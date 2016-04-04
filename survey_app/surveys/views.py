@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-from survey_app.surveys.models import StorySurvey
+from survey_app.surveys.models import Story
 
 
 class SurveyMixin(object):
@@ -15,7 +15,7 @@ class SurveyMixin(object):
         context = super(SurveyMixin, self).get_context_data(**kwargs)
 
         survey_id = self.kwargs.get('pk', None)
-        surveys = StorySurvey.public.is_public()
+        surveys = Story.public.is_public()
 
         if survey_id:
             context['survey'] = get_object_or_404(surveys, pk=survey_id)
@@ -31,7 +31,7 @@ class PublicSurveyMixin(object):
 
     def get_context_data(self, **kwargs):
         context = super(PublicSurveyMixin, self).get_context_data(**kwargs)
-        context['surveys'] = StorySurvey.public.is_public()
+        context['surveys'] = Story.public.is_public()
         return context
 
 

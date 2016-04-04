@@ -2,7 +2,7 @@ from django.db import models
 from survey_app.surveys.querysets import PublicStorySurveyQuerySet
 
 
-class StorySurvey(models.Model):
+class Story(models.Model):
     """
     A database model representing a survey.
     """
@@ -27,3 +27,20 @@ class StorySurvey(models.Model):
     )
 
     public = PublicStorySurveyQuerySet.as_manager()
+
+
+class StoryEvent(models.Model):
+    """
+    A database model that represents a single event in a story.
+    """
+
+    survey = models.ForeignKey(
+        'surveys.Story',
+        related_name='events'
+    )
+
+    text = models.TextField(
+        help_text='The text of one event in the story.'
+    )
+
+    #order
