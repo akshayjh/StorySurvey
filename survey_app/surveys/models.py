@@ -28,6 +28,9 @@ class Story(models.Model):
 
     public = PublicStorySurveyQuerySet.as_manager()
 
+    def __str__(self):
+        return self.title
+
 
 class StoryEvent(models.Model):
     """
