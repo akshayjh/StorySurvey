@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
-from survey_app.surveys.factories import StorySurveyFactory
+from survey_app.surveys.factories import StoryFactory
 
 
 class SurveyViewTests(TestCase):
@@ -8,7 +8,7 @@ class SurveyViewTests(TestCase):
     def setUp(self):
         super(SurveyViewTests, self).setUp()
 
-        self.survey = StorySurveyFactory()
+        self.survey = StoryFactory()
 
         self.survey_url = reverse(
             'surveys:survey',
